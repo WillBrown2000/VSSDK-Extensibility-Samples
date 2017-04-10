@@ -25,6 +25,7 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
     <ProjectGuid>{FB4C8875-BD88-4C9F-8F37-89950F186B10}</ProjectGuid>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
+    <VsixType>v3</VsixType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Samples.VisualStudio.IDE.OptionsPage</RootNamespace>
     <AssemblyName>OptionsPage</AssemblyName>
@@ -33,7 +34,12 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
     </AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 	<VsixType>v3</VsixType> 
- </PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
