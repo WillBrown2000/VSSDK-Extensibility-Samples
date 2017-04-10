@@ -11,7 +11,7 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <Import Project="packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.23-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props" Condition="Exists('packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.23-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+	<MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <NuGetPackageImportStamp>
@@ -32,11 +32,9 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-  </PropertyGroup>
+	<VsixType>v3</VsixType> 
+ </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartAction>Program</StartAction>
-    <StartProgram>$(ProgramFiles)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe</StartProgram>
-    <StartArguments>/rootsuffix Exp</StartArguments>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -46,9 +44,6 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <StartAction>Program</StartAction>
-    <StartProgram>$(ProgramFiles)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe</StartProgram>
-    <StartArguments>/rootsuffix Exp</StartArguments>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
